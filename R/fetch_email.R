@@ -1,8 +1,8 @@
-#' @title Check for new email on the server
-#' @description Returns a list of the newest messages. The maximum size of the list is 20 items.
-#' @details The client should not check email too many times as to not overload the server. Do not check if the email expired, the email checking routing should pause if the email expired.
+#' @title Get the contents of an email
+#' @description Get the contents of an email.
+#' @details
 #' @param sid_token character, session ID token returned from \code{\link{get_email_address}}.
-#' @param seq integer, the sequence number (id) of the oldest email.
+#' @param email_id integer, the id of the email to fetch.
 #' @return A list, representing the API response.
 #' @author Philipp Ottolinger
 #' @seealso \code{\link{https://www.guerrillamail.com/GuerrillaMailAPI.html}}
@@ -15,18 +15,19 @@
 #' \dontrun{
 #' library(guerrillamail)
 #' address <- get_email_address()
-#' mail <- check_email(sid_token = address$sid_token, seq = 0)
-#' mail
+#' mailbox <- check_email(sid_token = address$sid_token, seq = 0)
+#' message <- fetch_email(sid_token = address$id_token, email_id = min(mailbox$list$mail_id))
+#' message
 #' }
 #' @export
 
-check_email <- function(sid_token, seq) {
+fetch_email <- function(sid_token, email_id) {
   request <- httr::modify_url(
     url = "https://api.guerrillamail.com/ajax.php?",
     query = list(
-      "f" = "check_email",
+      "f" = "fetch_email",
       "sid_token" = sid_token,
-      "seq" = seq
+      "email_id" = email_id
     )
   )
   response <- httr::GET(request)

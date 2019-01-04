@@ -8,6 +8,7 @@
 #' @param agent character, the user agent of the client.
 #' @return A list, representing the API response.
 #' @author Philipp Ottolinger
+#' @seealso \code{\link{https://www.guerrillamail.com/GuerrillaMailAPI.html}}
 #' @importFrom httr modify_url
 #' @importFrom httr GET
 #' @importFrom httr stop_for_status

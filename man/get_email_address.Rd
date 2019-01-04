@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_email_address.R
 \name{get_email_address}
 \alias{get_email_address}
-\title{Get an email address from Guerrilla Mail.}
+\title{Get an email address from Guerrilla Mail}
 \usage{
 get_email_address(lang = "en", sid_token = NULL, site = NULL,
   ip = NULL, agent = NULL)
@@ -33,6 +33,9 @@ library(guerrillamail)
 address <- get_email_address()
 address
 }
+}
+\seealso{
+\code{\link{https://www.guerrillamail.com/GuerrillaMailAPI.html}}
 }
 \author{
 Philipp Ottolinger

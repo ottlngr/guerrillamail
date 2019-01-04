@@ -22,7 +22,14 @@ The client should not check email too many times as to not overload the server. 
 }
 \examples{
 \dontrun{
+library(guerrillamail)
+address <- get_email_address()
+mail <- check_email(sid_token = address$sid_token, seq = 0)
+mail
 }
+}
+\seealso{
+\code{\link{https://www.guerrillamail.com/GuerrillaMailAPI.html}}
 }
 \author{
 Philipp Ottolinger
