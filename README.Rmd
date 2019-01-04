@@ -1,7 +1,18 @@
+---
+output: github_document
+---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-guerrillamail
-=============
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+# guerrillamail
 
 > Guerrilla Mail gives you a disposable email address. There is no need to register, simply visit Guerrilla Mail and a random address will be given. You can also choose your own address.
 
@@ -13,8 +24,7 @@ Taken from [Guerrilla Mail](https://www.guerrillamail.com/about).
 
 Taken from the [Guerrilla Mail API Documentation](https://docs.google.com/document/d/1Qw5KQP1j57BPTDmms5nspe-QAjNEsNg8cQHpAAycYNM/edit?hl=en).
 
-Installation
-------------
+## Installation
 
 You can install the latest version of `guerrillamail` from GitHub using
 
@@ -22,5 +32,4 @@ You can install the latest version of `guerrillamail` from GitHub using
 devtools::install_github("ottlngr/guerrillamail")
 ```
 
-Example
--------
+## Example
